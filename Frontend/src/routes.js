@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/Login/login";
 import SignUp from "./components/Signup/signup";
 import Home from "./components/Home/home";
+import Post from "./components/Post/post";
 
 const getRoutes = (token) => {
   let routes;
@@ -12,6 +13,7 @@ const getRoutes = (token) => {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Home />} />
         <Route path="/" element={<Home />} />
+        <Route path="/blog/:id" element={<Post/>}/>
       </Routes>
     );
   }  else {

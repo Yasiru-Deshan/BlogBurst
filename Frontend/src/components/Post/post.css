@@ -1,0 +1,33 @@
+.postContainer{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 6rem;
+}
+
+.heading{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.postImage{
+    width: 80%;
+    padding: 20px 0 0 20px;
+}
+
+.content{
+    padding: 20px 0px 40px 0px;
+}
+
+.ownerImg{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.owner{
+    font-size: 2rem;
+
+}
