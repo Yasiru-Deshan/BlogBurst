@@ -62,9 +62,25 @@
   float: right;
 }
 
+.ownArea{
+    background-color: #101522;
+    padding: 20px;
+    display: grid;
+    grid: auto/ auto auto;
+    grid-gap: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .cardContainer
     {
         grid : auto / auto;
     } 
+
+    .ownArea{
+    background-color: #101522;
+    padding: 20px;
+    display: grid;
+    grid: auto/ auto;
+    grid-gap: 20px;
+}
 }

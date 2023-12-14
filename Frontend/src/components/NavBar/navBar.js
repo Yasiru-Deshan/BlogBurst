@@ -55,8 +55,8 @@ const Navbar = ({ toggle }) => {
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
-              <NavMenu>
-              {auth.isLoggedIn &&
+            <NavMenu>
+              {auth.isLoggedIn && (
                 <NavItem>
                   <NavLinks
                     to="/home"
@@ -69,11 +69,11 @@ const Navbar = ({ toggle }) => {
                     Home
                   </NavLinks>
                 </NavItem>
-              }
-              {auth.isLoggedIn && 
+              )}
+              {auth.isLoggedIn && (
                 <NavItem>
                   <NavLinks
-                    to="scope"
+                    to="/my_blogs"
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -83,18 +83,26 @@ const Navbar = ({ toggle }) => {
                     My Blogs
                   </NavLinks>
                 </NavItem>
-              }
-                {auth.isLoggedIn && (
-                  <NavBtnLink
-                    onClick={signOut}
+              )}
+              {auth.isLoggedIn && (
+                <NavItem>
+                  <NavLinks
+                    to="scope"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
                   >
-                    Logout
-                  </NavBtnLink>
-                )}
-                {!auth.isLoggedIn && (
-                  <NavBtnLink to="/login">Sign In</NavBtnLink>
-                )}
-              </NavMenu>
+                    Write
+                  </NavLinks>
+                </NavItem>
+              )}
+              {auth.isLoggedIn && (
+                <NavBtnLink onClick={signOut}>Logout</NavBtnLink>
+              )}
+              {!auth.isLoggedIn && <NavBtnLink to="/login">Sign In</NavBtnLink>}
+            </NavMenu>
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>

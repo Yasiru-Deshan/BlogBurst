@@ -4,6 +4,7 @@ import Login from "./components/Login/login";
 import SignUp from "./components/Signup/signup";
 import Home from "./components/Home/home";
 import Post from "./components/Post/post";
+import MyBlogs from "./Pages/myBlogs";
 
 const getRoutes = (token) => {
   let routes;
@@ -14,6 +15,7 @@ const getRoutes = (token) => {
         <Route path="/login" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<Post/>}/>
+        <Route path="/my_blogs" element={<MyBlogs/>}/>
       </Routes>
     );
   }  else {
