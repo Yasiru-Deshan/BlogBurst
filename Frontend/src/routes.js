@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Login from "./components/Login/Login";
-import SignUp from "./components/SignUp/Signup";
+import Login from "./components/Login/login";
+import SignUp from "./components/Signup/signup";
+import Home from "./components/Home/home";
 
 const getRoutes = (token) => {
   let routes;

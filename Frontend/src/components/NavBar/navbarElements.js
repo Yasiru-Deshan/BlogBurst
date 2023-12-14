@@ -24,7 +24,6 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: right;
   height: 8px;
   z-index: 1;
   width: 100%;

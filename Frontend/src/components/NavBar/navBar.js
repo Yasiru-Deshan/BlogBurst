@@ -9,6 +9,7 @@ import {
   NavMenu,
   NavBtnLink,
   NavLinks,
+  NavLogo,
 } from "./navbarElements";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -41,9 +42,9 @@ const Navbar = ({ toggle }) => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            {/* <NavLogo to="/" onClick={toggleHome}>
-              ERP SYSTEM
-            </NavLogo> */}
+            <NavLogo to="/">
+              Blog Burst
+            </NavLogo>
 
             <MobileIcon onClick={toggle}>
               <FaBars />

@@ -1,10 +1,8 @@
 import React, { useCallback, useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Navigate } from "react-router-dom";
-import Notification from "./components/Notification/Notification";
 import { AuthContext } from "./context/AuthContext";
-import { NotificationContext } from "./context/NotificationContext";
-import Footer from "./components/Footer/index";
+import Footer from "./components/Footer/footer";
 import getRoutes from "./routes";
 import NavBar from "./components/NavBar/navBar";
 //require("dotenv").config();
@@ -105,24 +103,13 @@ function App() {
         reloadUser,
       }}
     >
-      <NotificationContext.Provider
-        value={{
-          notify,
-          message,
-          error,
-          showNotification: setNotification,
-          clearNotification: clearNotification,
-        }}
-      >
         <BrowserRouter>
           <div className="app">
             <NavBar />
-            <Notification />
-
             <div>{routes}</div>
+            <Footer/>
           </div>
         </BrowserRouter>
-      </NotificationContext.Provider>
     </AuthContext.Provider>
   );
 }
