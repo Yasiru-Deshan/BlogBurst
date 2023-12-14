@@ -23,7 +23,7 @@ const Login = () => {
     };
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/auth/login`,
+        `http://localhost:8071/api/auth/login`,
         body,
         {
           ContentType: "application/json",
@@ -35,7 +35,6 @@ const Login = () => {
           response.data.token,
           response.data.firstName + " " + response.data.lastName,
           response.data.id,
-          response.data.role,
           response.data.user
         );
         navigate("/home");
@@ -63,12 +62,15 @@ const Login = () => {
             marginTop: "6rem",
             marginBottom: "5rem",
             borderRadius: "20px",
-            padding: "30px",
+            padding: "10px",
             height: "100%",
+            boxShadow: "30px 20px 30px 10px rgba(56, 125, 255, 0.17)",
           }}
         >
           <Card.Body>
-            <Card.Title style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+            <Card.Title
+              style={{ fontWeight: "bold", fontSize: "2rem", padding: "1rem" }}
+            >
               Sign In
             </Card.Title>
 
@@ -100,7 +102,7 @@ const Login = () => {
               </div>
 
               <div className="mb-3">
-                <button className="btn btn-primary w-100">Login</button>
+                <button className="btn btn-primary w-100">Sign In</button>
               </div>
             </form>
           </Card.Body>

@@ -9,17 +9,19 @@ const getRoutes = (token) => {
   if (token) {
     routes = (
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     );
   }  else {
     routes = (
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     );
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -13,9 +13,13 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./navbarElements.js";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
+  const auth = useContext(AuthContext);
   const [scrollNav, setScrollNav] = useState(false);
+  const navigate = useNavigate();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -33,6 +37,13 @@ const Navbar = ({ toggle }) => {
     scroll.scrollToTop();
   };
 
+    const signOut = () => {
+      auth.logout();
+      navigate("/login");
+      window.location.reload();
+    };
+
+
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -41,40 +52,49 @@ const Navbar = ({ toggle }) => {
             <NavLogo to="/" onClick={toggleHome}>
               BLOG BURST
             </NavLogo>
-
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
-
-            <NavMenu>
-              <NavItem>
-                <NavLinks
-                  to="home"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}
-                >
-                  Home
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to="scope"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}
-                >
-                  My Blogs
-                </NavLinks>
-              </NavItem>
-            </NavMenu>
-            <NavBtn>
-                <NavBtnLink to="/signin">Sign In</NavBtnLink>
-              </NavBtn>
+              <NavMenu>
+              {auth.isLoggedIn &&
+                <NavItem>
+                  <NavLinks
+                    to="/home"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    Home
+                  </NavLinks>
+                </NavItem>
+              }
+              {auth.isLoggedIn && 
+                <NavItem>
+                  <NavLinks
+                    to="scope"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    My Blogs
+                  </NavLinks>
+                </NavItem>
+              }
+                {auth.isLoggedIn && (
+                  <NavBtnLink
+                    onClick={signOut}
+                  >
+                    Logout
+                  </NavBtnLink>
+                )}
+                {!auth.isLoggedIn && (
+                  <NavBtnLink to="/login">Sign In</NavBtnLink>
+                )}
+              </NavMenu>
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>

@@ -1,0 +1,57 @@
+.cardContainer {
+    display: grid;
+    grid: auto / auto auto auto auto;
+    grid-gap: 30px;
+    padding: 10px;
+    height: 600px,
+}
+
+@media only screen and (max-width: 600px) {
+    .cardContainer {
+        grid: auto / auto;
+    }
+}
+
+.exImage {
+    position: relative;
+    height: 300px;
+    border: none;
+}
+
+.eimg {
+    width: 100%;
+    height: 300px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(rgba(255, 0, 0, 0),
+            rgba(2, 0, 0, 1),
+            rgba(2, 0, 0, 1));
+    opacity: 0.8;
+    overflow: hidden;
+    width: 100%;
+    height: 40%;
+    transition: 0.5s ease;
+}
+
+.cardText {
+    color: white;
+    width: 95%;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 500;
+}
+
+.exImage:hover .overlay {
+    height: 100%;
+}

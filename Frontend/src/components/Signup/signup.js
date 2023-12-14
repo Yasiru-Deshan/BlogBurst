@@ -10,9 +10,6 @@ const Signup = () => {
   const lname = useRef();
   const password = useRef();
   const email = useRef();
-  const mobile = useRef();
-  const city = useRef();
-  const zip = useRef();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -23,14 +20,11 @@ const Signup = () => {
       lastName: lname.current.value,
       password: password.current.value,
       email: email.current.value,
-      mobile: mobile.current.value,
-      city: city.current.value,
-      zip: zip.current.value,
     };
 
     try {
       newCustomer = await axios.post(
-        "http://localhost:5000/api/auth/",
+        "http://localhost:8071/api/auth/",
         newUser
       );
       if (newCustomer) {
@@ -51,15 +45,18 @@ const Signup = () => {
           className="text-center"
           style={{
             width: "28rem",
-            marginTop: "10rem",
+            marginTop: "6rem",
             marginBottom: "5rem",
             borderRadius: "20px",
-            padding: "30px",
+            padding: "10px",
             height: "100%",
+            "box-shadow": "30px 20px 30px 10px rgba(56, 125, 255, 0.17)",
           }}
         >
           <Card.Body>
-            <Card.Title style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+            <Card.Title
+              style={{ fontWeight: "bold", fontSize: "2rem", padding: "1rem" }}
+            >
               Sign Up
             </Card.Title>
 
@@ -108,39 +105,7 @@ const Signup = () => {
                   required
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="mobile">mobile</label>
-                <input
-                  type="number"
-                  name="mobile"
-                  className="form-control"
-                  id="mobile"
-                  ref={mobile}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="city">city</label>
-                <input
-                  type="text"
-                  name="city"
-                  className="form-control"
-                  id="city"
-                  ref={city}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="zip">zip</label>
-                <input
-                  type="number"
-                  name="zip"
-                  className="form-control"
-                  id="zip"
-                  ref={zip}
-                  required
-                />
-              </div>
+              
               <div className="mb-3">
                 <button className="btn btn-primary w-100">
                   Create Account
