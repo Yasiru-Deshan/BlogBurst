@@ -54,8 +54,9 @@ const Home = () => {
               key={post.title}
               image={post.img}
               title={post.title}
-              author={post.author}
+              author={post.author.firstName}
               content={post.content}
+              authorImg={post.author.image}
             />
           );
         })}

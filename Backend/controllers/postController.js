@@ -26,7 +26,7 @@ const createPost = async (req, res, next) => {
 //get posts
 const getPosts = async (req, res, next) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().populate("author");
 
     return res.status(200).json({ msg: "Posts found", posts });
   } catch (err) {
