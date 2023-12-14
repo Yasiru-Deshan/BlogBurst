@@ -1,0 +1,28 @@
+Assignment C
+ 
+Task Description: Your task is to build a blogging platform using the MERN stack (MongoDB, Express.js, React.js, Node.js), TypeScript, and Next.js. The platform should allow users to create, view, edit, and delete blog posts.
+ 
+The following features should be implemented:
+ 
+1. User Authentication:
+•         Allow users to register and login.
+•         Implement authentication using JWT (JSON Web Tokens).
+•         Protect routes that require authentication.
+ 
+2. Blog Post Management:
+•         Users should be able to create new blog posts.
+•         Each blog post should have a title, content, and author.
+•         Implement CRUD (Create, Read, Update, Delete) functionality for blog posts.
+•         Users should only be able to edit or delete their own blog posts.
+ 
+3. Blog Post Listing:
+•         Implement a homepage that displays a list of all blog posts.
+•         Each blog post in the list should display the title, author, and a summary of the content.
+•         Clicking on a blog post should take the user to the individual blog post page.
+ 
+4. Individual Blog Post Page:
+•         Implement a page that displays an individual blog post in full.
+•         Include the title, content, author, and any additional details you think are relevant.
+ 
+5. UI Design and Responsiveness:
+•         Implement a responsive UI design using React.js or a UI library/framework of your choice.
