@@ -3,10 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) =>
-    scrollNav
-      ? "linear-gradient(to right, #4a00e0, #8e2de2)"
-      : "linear-gradient(to right, #8e2de2, #4a00e0)"};
+  background: #101522;
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -24,6 +21,7 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   height: 8px;
   z-index: 1;
   width: 100%;
@@ -32,15 +30,21 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #fff;
+  background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  color: transparent;
+  -webkit-background-clip: text; 
+  background-clip: text;
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   margin-left: 24px;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
+  padding: 14px;
+  height: 3 rem;
+  margin-top: -10px;
 `;
 
 export const MobileIcon = styled.div`
@@ -73,7 +77,7 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
   height: 80px;
 `;
-export const NavLinks = styled(LinkR)`
+export const NavLinks = styled(LinkS)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -98,7 +102,7 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;
-  background: #ff10f0;
+  background: rgb(255 255 255 / 20%) 0% 0%;
   white-space: nowrap;
   padding: 10px 22px;
   color: #fff;

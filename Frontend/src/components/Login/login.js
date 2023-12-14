@@ -60,7 +60,7 @@ const Login = () => {
           className="text-center"
           style={{
             width: "28rem",
-            marginTop: "10rem",
+            marginTop: "6rem",
             marginBottom: "5rem",
             borderRadius: "20px",
             padding: "30px",
@@ -69,7 +69,7 @@ const Login = () => {
         >
           <Card.Body>
             <Card.Title style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-              Log In
+              Sign In
             </Card.Title>
 
             <form onSubmit={handleSubmit}>
