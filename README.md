@@ -1,8 +1,8 @@
 ### Running Backend
 Navigate to the Backend Directory:
-Open a terminal and navigate to the directory where your backend code is located.
-
+Open a terminal and navigate to the backend directory.
 cd backend
+
 Run the following command to install the necessary dependencies:
 npm install
 
@@ -16,8 +16,8 @@ Server will starting on http://localhost:8071.
 
 ### Running Frontend (React.js):
 Navigate to the Frontend Directory:
-
 cd frontend
+
 Install Dependencies:
 Run the following command to install the necessary dependencies:
 npm install
