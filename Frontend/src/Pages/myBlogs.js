@@ -47,6 +47,7 @@ const MyBlogs = () => {
       >
         My Blogs
       </h1>
+      {posts.length>0 ?
 
       <div className="cardContainer" style={{ marginTop: "20px" }}>
         {posts.map((post) => {
@@ -64,6 +65,9 @@ const MyBlogs = () => {
           );
         })}
       </div>
+      : <div style={{padding: "150px 0px 150px 0px",}}>
+        <h2>You haven't written anything yet.</h2>
+      </div>}
     </div>
   );
 };
