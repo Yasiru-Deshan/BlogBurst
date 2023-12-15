@@ -5,34 +5,12 @@ import { AuthContext } from "./context/AuthContext";
 import Footer from "./components/Footer/footer";
 import getRoutes from "./routes";
 import NavBar from "./components/NavBar/navBar";
-//require("dotenv").config();
 
 function App() {
   const [token, setToken] = useState();
   const [name, setName] = useState();
   const [userId, setUserId] = useState();
   const [user, setUser] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [notify, setNotify] = useState();
-  const [message, setMessage] = useState();
-  const [error, setError] = useState(false);
-
-  const clearNotification = useCallback(() => {
-    setNotify(false);
-    setMessage(null);
-    setError(false);
-  }, []);
-  const setNotification = useCallback(
-    (msg, error) => {
-      setMessage(msg);
-      setError(error);
-      setNotify(true);
-      setTimeout(() => {
-        clearNotification();
-      }, 5000);
-    },
-    [clearNotification]
-  );
 
   const reloadUser = useCallback((user) => {
     const storedData = JSON.parse(localStorage.getItem("authData"));
@@ -63,7 +41,6 @@ function App() {
         user,
       })
     );
-    setIsLoading(false);
   }, []);
 
   const logout = useCallback(() => {
@@ -86,7 +63,6 @@ function App() {
         storedData.user
       );
     }
-    setIsLoading(false);
   }, [authenticate]);
 
   let routes = getRoutes(token);
