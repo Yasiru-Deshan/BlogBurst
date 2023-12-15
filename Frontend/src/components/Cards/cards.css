@@ -1,6 +1,6 @@
 .cardContainer {
   display: grid;
-  grid: auto / auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding: 10px;
 }
@@ -43,6 +43,14 @@
   transform: translate(-50%, -50%);
   text-align: center;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exImage:hover .cardText {
+  white-space: normal; 
+  overflow: visible; 
 }
 
 .exImage:hover .overlay {

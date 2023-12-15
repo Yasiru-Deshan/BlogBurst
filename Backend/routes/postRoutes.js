@@ -7,6 +7,7 @@ const {
   deletePost,
 } = require("../controllers/postController");
 const Authentication = require("../middleware/authentication");
+const { get } = require("mongoose");
 const router = express.Router();
 
 router.post("/new", Authentication, createPost);

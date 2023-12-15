@@ -40,7 +40,7 @@ const getPosts = async (req, res, next) => {
 const getPostById = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const post = await Post.findById(id);
+    const post = await Post.findById(id).populate("author");
 
     return res.status(200).json({ msg: "Post found", post });
   } catch (err) {

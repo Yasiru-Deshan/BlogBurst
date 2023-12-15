@@ -87,7 +87,7 @@ const Navbar = ({ toggle }) => {
               {auth.isLoggedIn && (
                 <NavItem>
                   <NavLinks
-                    to="scope"
+                    to="/blog"
                     smooth={true}
                     duration={500}
                     spy={true}

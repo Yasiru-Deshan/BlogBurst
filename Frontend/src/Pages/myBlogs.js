@@ -18,8 +18,8 @@ const MyBlogs = () => {
     };
 
     const getPosts = () => {
-      axios.get("http://localhost:8071/api/posts", config).then((res) => {
-        setPosts(res.data.posts.reverse());
+      axios.get("http://localhost:8071/api/auth/my_blogs", config).then((res) => {
+        setPosts(res.data.user.posts.reverse());
       });
     };
 
@@ -42,6 +42,7 @@ const MyBlogs = () => {
           color: "#101522",
           margin: "20px 0 0 20px",
           fontWeight: "800",
+          textAlign: "center",
         }}
       >
         My Blogs
@@ -52,11 +53,12 @@ const MyBlogs = () => {
           return (
             <Cards
               key={post.title}
-              image={post.img}
+              id={post._id}
+              image={post.image}
               title={post.title}
-              author={post.author.firstName}
+              author={auth.fullName}
               content={post.content}
-              authorImg={post.author.image}
+              authorImg={post.image}
               editable={editable}
             />
           );

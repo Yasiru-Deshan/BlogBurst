@@ -83,6 +83,20 @@ const login = async (req, res, next) => {
   }
 };
 
+//get posts
+const getMyPosts = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user.id).populate("posts");
+
+    return res.status(200).json({ msg: "Posts found", user });
+  } catch (err) {
+    return res.status(500).json({
+      msg: err,
+    });
+  }
+};
+
 exports.signUp = signUp;
 exports.login = login;
+exports.getMyPosts = getMyPosts;
 
